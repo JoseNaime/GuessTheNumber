@@ -1,3 +1,6 @@
+[CLICK HERE](https://josenaime.github.io/GuessTheNumber) to test the app
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
