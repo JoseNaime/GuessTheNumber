@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import {Message} from "./components/message/message.component";
 import {NumberInput} from "./components/number-input/number-input.component";
+import {Logo} from "./components/logo/logo.component";
 
 class App extends Component {
     constructor() {
@@ -50,8 +51,8 @@ class App extends Component {
         const attemptsMessage = (this.state.hasFinished) ?? <p>Attempts: {this.state.attempts}</p>;
 
         return (
-            <div className='App'>
-                <div className={`content ${this.state.background}`}>
+            <div className={`App ${this.state.background}`}>
+                <div className={`content`}>
                     <Message message={this.state.message}/>
                     {attemptsMessage}
                     <NumberInput onInputChange={this.onInputChange} checkAnswer={this.checkAnswer}/>
