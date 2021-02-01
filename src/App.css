@@ -1,40 +1,77 @@
-#root {
-  min-height: 100vh;
+:root {
+  --red  : #E05849;
+  --blue : #347FE0;
 }
+
+#root {
+  min-height : 100vh;
+}
+
+#homeScreen {
+  height     : 100%;
+  margin     : 0;
+  background : linear-gradient(157deg, var(--blue) 0%, var(--blue) 50%, var(--red) 50%, var(--red) 100%);
+}
+
 
 .App {
-  text-align: center;
-  min-height: 100vh;
+  text-align : center;
+  min-height : 100vh;
 }
 
-.logo{
-  size: 5px;
+.logo {
+  size : 5px;
 }
 
-.content{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  font-size: 3rem;
-  color: white;
-
+#valueSlider {
+  color : white;
+  
+  width : 6em;
 }
 
-.higher{
-  background-color: #f76868;
+.slider {
+  display     : flex;
+  align-items : center;
+  font-size   : 0.3em;
 }
 
-.lower{
-  background-color: #3e6df5
+.slider p {
+  margin : 0 1em;
 }
 
-.right{
-  background-color: #a1cb4c;
+.content {
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  flex-direction  : column;
+  height          : 100vh;
+  font-size       : 3rem;
+  color           : white;
+  
 }
 
-.neutral{
-  background-color: #575755;
+.column {
+  display        : flex;
+  flex-direction : column;
+}
 
+.higher {
+  background-color : var(--red);
+}
+
+.lower {
+  background-color : var(--blue);
+}
+
+.right {
+  background-color : #a1cb4c;
+}
+
+.neutral {
+  background-color : #575755;
+  
+}
+
+.message {
+  text-transform : capitalize;
 }

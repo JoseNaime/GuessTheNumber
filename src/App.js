@@ -1,65 +1,24 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
-import {Message} from "./components/message/message.component";
-import {NumberInput} from "./components/number-input/number-input.component";
-import {Logo} from "./components/logo/logo.component";
+import GameScreen from "./screens/GameScreen";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
+import HomeScreen from "./screens/HomeScreen";
 
-class App extends Component {
-    constructor() {
-        super();
-        this.state = {
-            number: 0,
-            attempts: 1,
-            inputNumber: 0,
-            message: 'Type a number',
-            background: 'neutral',
-            hasFinished: false
-        }
-    }
-
-    onInputChange = (event) => {
-        this.setState({inputNumber: event})
-    }
-
-    checkAnswer = () => {
-        console.log(this.state.inputNumber)
-
-        let message;
-        let bgState;
-        if (this.state.inputNumber === this.state.number) {
-            message = `CONGRATS!! ${this.state.attempts} attempts`
-            this.setState({hasFinished: true})
-            bgState = 'right'
-        } else if (this.state.inputNumber > this.state.number) {
-            message = 'LOWER'
-            bgState = 'lower'
-        } else if (this.state.inputNumber < this.state.number) {
-            message = 'HIGHER'
-            bgState = 'higher'
-        }
-
-        this.setState({message: message})
-        this.setState({background: bgState})
-        this.setState({attempts: this.state.attempts + 1})
-    }
-
-    componentDidMount() {
-        this.setState({number: Math.round(Math.random() * (100))})
-    }
-
-    render() {
-        const attemptsMessage = (this.state.hasFinished) ?? <p>Attempts: {this.state.attempts}</p>;
-
-        return (
-            <div className={`App ${this.state.background}`}>
-                <div className={`content`}>
-                    <Message message={this.state.message}/>
-                    {attemptsMessage}
-                    <NumberInput onInputChange={this.onInputChange} checkAnswer={this.checkAnswer}/>
-                </div>
-            </div>
-        );
-    }
+const App = () => {
+    return (
+        <div>
+            <Router>
+                <Switch>
+                    <Route path="/">
+                        <HomeScreen/>
+                    </Route>
+                    <Route path="/game">
+                        <GameScreen/>
+                    </Route>
+                </Switch>
+            </Router>
+        </div>
+    )
 }
 
 export default App;
