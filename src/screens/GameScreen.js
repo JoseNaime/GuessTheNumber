@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Slider} from "@material-ui/core";
+import {Link} from "react-router-dom";
 
 function GameScreen(props) {
     const [number, setNumber] = useState(0)
@@ -10,7 +11,7 @@ function GameScreen(props) {
     const [hasFinished, setHasFinished] = useState(false);
 
     const onInputChange = (event, newValue) => {
-        setInputNumber(newValue)
+        setInputNumber(newValue);
     }
 
     useEffect(() => {
@@ -22,7 +23,7 @@ function GameScreen(props) {
         let message;
         let bgState;
         if (inputNumber === number) {
-            message = `CONGRATS!! ${attempts} attempts`
+            message = `CONGRATS!!\n${attempts} attempts`
             setHasFinished(true)
             bgState = 'right'
         } else if (inputNumber > number) {
@@ -43,11 +44,14 @@ function GameScreen(props) {
     return (
         <div>
             <div className={`App ${background}`}>
-                <div className={`content`}>
+                <div className={`wrapper content`}>
+                    <Link to={`/`}>
+                        <button className={`top circle`}>{'<'}</button>
+                    </Link>
                     <h1 className={'message'}>{message}</h1>
                     <form className={'column'} onSubmit={checkAnswer}>
                         <label className={'column'}>
-                            {inputNumber}
+                            <p>{inputNumber}</p>
                             <div className={'slider'}>
                                 <p>0</p>
                                 <Slider id="valueSlider" value={inputNumber} onChange={onInputChange}
@@ -55,9 +59,8 @@ function GameScreen(props) {
                                 <p>100</p>
                             </div>
                         </label>
-                        <button type={"submit"} value={"check"}>Check</button>
+                        <button className={"center"} type={"submit"} value={"check"}>Check</button>
                     </form>
-
                 </div>
             </div>
         </div>

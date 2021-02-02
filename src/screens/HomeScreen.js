@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function HomeScreen(props) {
     return (
@@ -9,8 +10,11 @@ function HomeScreen(props) {
                 </figure>
             </header>
             <main>
-                <div id="initButtons" className="buttonsContainer column">
-                    <button>Play</button>
+                <div className="buttonsContainer column">
+                    <Link to={`/game`}>
+                        <button>Play</button>
+                    </Link>
+
                 </div>
 
             </main>

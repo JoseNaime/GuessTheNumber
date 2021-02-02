@@ -1,3 +1,9 @@
+/* Fonts */
+@font-face {
+  font-family: "BebasNeue";
+  src: url(./font/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+
 :root {
   --red  : #E05849;
   --blue : #347FE0;
@@ -5,6 +11,33 @@
 
 #root {
   min-height : 100vh;
+}
+
+.wrapper{
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+h1, p{
+  font-family: "BebasNeue", serif;
+}
+
+h1{
+  font-size: 8em;
+  font-weight: 300;
+}
+
+p{
+  font-size: 5em;
+  margin: 0 auto;
+}
+
+h1{
+  margin: 0;
+}
+form label{
+  margin: 5em 0;
 }
 
 #homeScreen {
@@ -25,7 +58,6 @@
 
 #title > img {
   max-width : 450px;
-
   animation: bounce 5s ease-in-out infinite;
   animation-delay: 2s;
 }
@@ -37,13 +69,14 @@
 
 #valueSlider {
   color : white;
-  width : 6em;
+  width : 95%;
 }
 
 .slider {
   display     : flex;
-  align-items : center;
+  align-self: center;
   font-size   : 0.3em;
+  width: 350px;
 }
 
 .slider p {
@@ -52,11 +85,11 @@
 
 .content {
   display         : flex;
+  text-align: center;
   justify-content : center;
   align-items     : center;
   flex-direction  : column;
   height          : 100vh;
-  font-size       : 3rem;
   color           : white;
   
 }
@@ -83,20 +116,42 @@
   
 }
 
+.top{
+  position: absolute;
+  top: 15px;
+  left: 0;
+}
+
+.center{
+  margin: 0 auto;
+}
+
 .message {
+  white-space: pre-wrap;
   text-transform : capitalize;
 }
 
 /* Buttons */
 button {
+  font-family: "BebasNeue", serif;
   background-color: white;
   border: none;
   border-radius: 20px;
-  font-size: 1em;
-  padding: .8em 1.5em;
+  font-size: 1.5em;
+  width: 5em;
+  padding: .5em 1em;
   margin: 1em;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
   transition: all .5s;
+}
+
+button.circle{
+  padding: 0;
+  border-radius: 50px;
+  font-size: 1.5em;
+  font-weight: 400;
+  width: 2em;
+  height: 2em;
 }
 
 button:hover{
@@ -112,19 +167,14 @@ button:hover{
   transform: translate(-50%,-50%);
 }
 
-#initButtons {
-  animation: up-fade-in 1s;
-  animation-delay: 2s;
-}
-
 /* Animations */
 
 @keyframes up-fade-in {
-  from{
+  0%{
     opacity: 0;
     transform: translateY(50px);
   }
-  to{
+  100%{
     transform: translateY(0);
     opacity: 100%;
   }

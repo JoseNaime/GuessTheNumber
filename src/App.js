@@ -9,11 +9,11 @@ const App = () => {
         <div>
             <Router>
                 <Switch>
+                    <Route exact path="/game">
+                        <GameScreen/>
+                    </Route>
                     <Route path="/">
                         <HomeScreen/>
-                    </Route>
-                    <Route path="/game">
-                        <GameScreen/>
                     </Route>
                 </Switch>
             </Router>
