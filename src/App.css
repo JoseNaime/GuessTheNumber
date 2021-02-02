@@ -53,11 +53,13 @@ form label{
 #title {
   margin     : 0 auto;
   text-align : center;
+  width : 100%;
   animation: titleInit 2s forwards;
 }
 
 #title > img {
-  max-width : 450px;
+  max-width : 500px;
+  height: auto;
   animation: bounce 5s ease-in-out infinite;
   animation-delay: 2s;
 }
@@ -133,6 +135,7 @@ form label{
 
 /* Buttons */
 button {
+  outline: none;
   font-family: "BebasNeue", serif;
   background-color: white;
   border: none;
