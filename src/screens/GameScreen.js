@@ -6,37 +6,45 @@ function GameScreen(props) {
     const [number, setNumber] = useState(0)
     const [attempts, setAttempts] = useState(1);
     const [inputNumber, setInputNumber] = useState(0);
+    const [prevInputNumber, setPrevInputNumber] = useState(-1);
     const [message, setMessage] = useState('Type a number');
     const [background, setBackground] = useState('neutral');
-    const [ setHasFinished] = useState(false);
-
-    const onInputChange = (event, newValue) => {
-        setInputNumber(newValue);
-    }
+    const [buttonAvailable, setButtonAvailable] = useState(true);
 
     useEffect(() => {
         setNumber(Math.round(Math.random() * (100)));
     }, [])
 
+    const onInputChange = (event, newValue) => {
+        setInputNumber(newValue);
+        checkIfAvailable()
+    }
+
+    const checkIfAvailable = () => {
+        setButtonAvailable(inputNumber !== prevInputNumber)
+    }
+
     const checkAnswer = (event) => {
         event.preventDefault();
         let message;
         let bgState;
-        if (inputNumber === number) {
+        if (inputNumber === number) { // Game Won
             message = `CONGRATS!!\n${attempts} attempts`
-            setHasFinished(true)
+            setButtonAvailable(true)
             bgState = 'right'
-        } else if (inputNumber > number) {
+        } else if (inputNumber > number) { // Number is Lower
             message = 'LOWER'
             bgState = 'lower'
-        } else if (inputNumber < number) {
+        } else if (inputNumber < number) { // Number is Higher
             message = 'HIGHER'
             bgState = 'higher'
         }
 
-        setMessage(message);
-        setBackground(bgState)
-        setAttempts(attempts + 1)
+        setPrevInputNumber(inputNumber); // Updates prev Input
+        setButtonAvailable(false) // Disable Button to avoid multiple checks
+        setMessage(message); // Set message
+        setBackground(bgState) // Set bg color
+        setAttempts(attempts + 1) // Add attempt
         return false
     }
 
@@ -59,7 +67,7 @@ function GameScreen(props) {
                                 <p>100</p>
                             </div>
                         </label>
-                        <button className={"center"} type={"submit"} value={"check"}>Check</button>
+                        <button className={"center"} type={"submit"} value={"check"} disabled={!buttonAvailable}>Check</button>
                     </form>
                 </div>
             </div>

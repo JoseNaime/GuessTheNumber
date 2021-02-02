@@ -1,7 +1,7 @@
 /* Fonts */
 @font-face {
-  font-family: "BebasNeue";
-  src: url(./font/Bebas_Neue/BebasNeue-Regular.ttf);
+  font-family : "BebasNeue";
+  src         : url(./font/Bebas_Neue/BebasNeue-Regular.ttf);
 }
 
 :root {
@@ -13,31 +13,31 @@
   min-height : 100vh;
 }
 
-.wrapper{
-  width: 1100px;
-  margin: 0 auto;
-  position: relative;
+.wrapper {
+  width    : 1100px;
+  margin   : 0 auto;
+  position : relative;
 }
 
-h1, p{
-  font-family: "BebasNeue", serif;
+h1, p {
+  font-family : "BebasNeue", serif;
 }
 
-h1{
-  font-size: 8em;
-  font-weight: 300;
+h1 {
+  font-size   : 8em;
+  font-weight : 300;
 }
 
-p{
-  font-size: 5em;
-  margin: 0 auto;
+p {
+  font-size : 5em;
+  margin    : 0 auto;
 }
 
-h1{
-  margin: 0;
+h1 {
+  margin : 0;
 }
-form label{
-  margin: 5em 0;
+form label {
+  margin : 5em 0;
 }
 
 #homeScreen {
@@ -49,19 +49,18 @@ form label{
   background      : linear-gradient(145deg, var(--red) 0%, var(--red) 50%, var(--blue) 50%, var(--blue) 100%);
 }
 
-
 #title {
   margin     : 0 auto;
   text-align : center;
-  width : 100%;
-  animation: titleInit 2s forwards;
+  width      : 100%;
+  animation  : titleInit 2s forwards;
 }
 
 #title > img {
-  max-width : 500px;
-  height: auto;
-  animation: bounce 5s ease-in-out infinite;
-  animation-delay: 2s;
+  max-width       : 500px;
+  height          : auto;
+  animation       : bounce 5s ease-in-out infinite;
+  animation-delay : 2s;
 }
 
 .App {
@@ -75,10 +74,10 @@ form label{
 }
 
 .slider {
-  display     : flex;
-  align-self: center;
-  font-size   : 0.3em;
-  width: 350px;
+  display    : flex;
+  align-self : center;
+  font-size  : 0.3em;
+  width      : 350px;
 }
 
 .slider p {
@@ -87,7 +86,7 @@ form label{
 
 .content {
   display         : flex;
-  text-align: center;
+  text-align      : center;
   justify-content : center;
   align-items     : center;
   flex-direction  : column;
@@ -118,100 +117,100 @@ form label{
   
 }
 
-.top{
-  position: absolute;
-  top: 15px;
-  left: 0;
+.top {
+  position : absolute;
+  top      : 15px;
+  left     : 0;
 }
 
-.center{
-  margin: 0 auto;
+.center {
+  margin : 0 auto;
 }
 
 .message {
-  white-space: pre-wrap;
+  white-space    : pre-wrap;
   text-transform : capitalize;
 }
 
 /* Buttons */
 button {
-  outline: none;
-  font-family: "BebasNeue", serif;
-  background-color: white;
-  border: none;
-  border-radius: 20px;
-  font-size: 1.5em;
-  width: 5em;
-  padding: .5em 1em;
-  margin: 1em;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
-  transition: all .5s;
+  outline          : none;
+  font-family      : "BebasNeue", serif;
+  background-color : white;
+  border           : none;
+  border-radius    : 20px;
+  font-size        : 1.5em;
+  width            : 5em;
+  padding          : .5em 1em;
+  margin           : 1em;
+  box-shadow       : 5px 5px 10px rgba(0, 0, 0, 0.2);
+  transition       : all .5s;
 }
 
-button.circle{
-  padding: 0;
-  border-radius: 50px;
-  font-size: 1.5em;
-  font-weight: 400;
-  width: 2em;
-  height: 2em;
+button.circle {
+  padding       : 0;
+  border-radius : 50px;
+  font-size     : 1.5em;
+  font-weight   : 400;
+  width         : 2em;
+  height        : 2em;
 }
 
-button:hover{
-  transform: scale(1.1);
-  box-shadow: 0 0 0 rgba(0,0,0,0);
+button:hover {
+  transform  : scale(1.1);
+  box-shadow : 0 0 0 rgba(0, 0, 0, 0);
   
 }
 
-.buttonsContainer{
-  position: absolute;
-  top:60%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+.buttonsContainer {
+  position  : absolute;
+  top       : 60%;
+  left      : 50%;
+  transform : translate(-50%, -50%);
 }
 
 /* Animations */
 
 @keyframes up-fade-in {
-  0%{
-    opacity: 0;
-    transform: translateY(50px);
+  0% {
+    opacity   : 0;
+    transform : translateY(50px);
   }
-  100%{
-    transform: translateY(0);
-    opacity: 100%;
+  100% {
+    transform : translateY(0);
+    opacity   : 100%;
   }
 }
 
 @keyframes titleInit {
-  0%{
-    transform: translateX(-100px);
-    filter: drop-shadow(0px 0px rgba(0, 0, 0, 0));
-    opacity: 0;
+  0% {
+    transform : translateX(-100px);
+    filter    : drop-shadow(0px 0px rgba(0, 0, 0, 0));
+    opacity   : 0;
   }
-  40%{
-    transform: translateX(0);
-    opacity: 100%;
+  40% {
+    transform : translateX(0);
+    opacity   : 100%;
   }
-  60%{
-
+  60% {
+  
   }
-  100%{
-    transform: translateY(-50%);
-    filter: drop-shadow(5px 5px rgba(0, 0, 0, 0.2));
+  100% {
+    transform : translateY(-50%);
+    filter    : drop-shadow(5px 5px rgba(0, 0, 0, 0.2));
   }
 }
 
 @keyframes bounce {
-  20%{
-    transform: translateY(-25px);
-  }
-
-  50%{
-    transform: translateY(0);
+  20% {
+    transform : translateY(-25px);
   }
   
-  80%{
-    transform: translateY(-25px);
+  50% {
+    transform : translateY(0);
+  }
+  
+  80% {
+    transform : translateY(-25px);
   }
 }
