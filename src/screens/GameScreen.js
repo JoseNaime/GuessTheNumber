@@ -8,7 +8,7 @@ function GameScreen(props) {
     const [inputNumber, setInputNumber] = useState(0);
     const [message, setMessage] = useState('Type a number');
     const [background, setBackground] = useState('neutral');
-    const [hasFinished, setHasFinished] = useState(false);
+    const [ setHasFinished] = useState(false);
 
     const onInputChange = (event, newValue) => {
         setInputNumber(newValue);
