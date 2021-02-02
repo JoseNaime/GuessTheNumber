@@ -8,24 +8,35 @@
 }
 
 #homeScreen {
-  height     : 100%;
-  margin     : 0;
-  background : linear-gradient(157deg, var(--blue) 0%, var(--blue) 50%, var(--red) 50%, var(--red) 100%);
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  height          : 100vh;
+  margin          : 0;
+  background      : linear-gradient(145deg, var(--red) 0%, var(--red) 50%, var(--blue) 50%, var(--blue) 100%);
 }
 
+
+#title {
+  margin     : 0 auto;
+  text-align : center;
+  animation: titleInit 2s forwards;
+}
+
+#title > img {
+  max-width : 450px;
+
+  animation: bounce 5s ease-in-out infinite;
+  animation-delay: 2s;
+}
 
 .App {
   text-align : center;
   min-height : 100vh;
 }
 
-.logo {
-  size : 5px;
-}
-
 #valueSlider {
   color : white;
-  
   width : 6em;
 }
 
@@ -74,4 +85,80 @@
 
 .message {
   text-transform : capitalize;
+}
+
+/* Buttons */
+button {
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1em;
+  padding: .8em 1.5em;
+  margin: 1em;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+  transition: all .5s;
+}
+
+button:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  
+}
+
+.buttonsContainer{
+  position: absolute;
+  top:60%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#initButtons {
+  animation: up-fade-in 1s;
+  animation-delay: 2s;
+}
+
+/* Animations */
+
+@keyframes up-fade-in {
+  from{
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to{
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes titleInit {
+  0%{
+    transform: translateX(-100px);
+    filter: drop-shadow(0px 0px rgba(0, 0, 0, 0));
+    opacity: 0;
+  }
+  40%{
+    transform: translateX(0);
+    opacity: 100%;
+  }
+  60%{
+
+  }
+  100%{
+    transform: translateY(-50%);
+    filter: drop-shadow(5px 5px rgba(0, 0, 0, 0.2));
+  }
+}
+
+@keyframes bounce {
+  20%{
+    transform: translateY(-25px);
+  }
+
+  50%{
+    transform: translateY(0);
+  }
+  
+  80%{
+    transform: translateY(-25px);
+  }
 }

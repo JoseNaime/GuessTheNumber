@@ -3,9 +3,17 @@ import React from 'react';
 function HomeScreen(props) {
     return (
         <div id={"homeScreen"}>
-            <figure>
-                <img src={"./../GuessTheNumber_Title.png"} />
-            </figure>
+            <header >
+                <figure id={"title"}>
+                    <img src={process.env.PUBLIC_URL + "/GuessTheNumber.png"} alt='Title'/>
+                </figure>
+            </header>
+            <main>
+                <div id="initButtons" className="buttonsContainer column">
+                    <button>Play</button>
+                </div>
+
+            </main>
         </div>
     );
 }
