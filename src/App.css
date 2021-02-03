@@ -229,7 +229,7 @@ button:hover {
   }
   to {
     transform : translateY(0);
-    opacity   : 10000%;
+    opacity   : 1;
   }
 }
 
@@ -241,7 +241,7 @@ button:hover {
   }
   40% {
     transform : translateX(0);
-    opacity   : 100%;
+    opacity   : 1;
   }
   60% {
   
