@@ -31,7 +31,7 @@ function GameScreen(props) {
         if (inputNumber === number) { // Game Won
             message = `CONGRATS!!\n${attempts} attempts`
             setButtonAvailable(true)
-            bgState = 'right'
+            bgState = 'completed'
         } else if (inputNumber > number) { // Number is Lower
             message = 'LOWER'
             bgState = 'lower'
@@ -48,8 +48,15 @@ function GameScreen(props) {
         return false
     }
 
+    const setSecondMessage = () => {
+        if (background === 'higher' || background === 'lower') {
+            return <h2>The number is</h2>
+        }
+        return ''
+    }
 
     return (
+
         <div>
             <div className={`App ${background}`}>
                 <div className={`wrapper content`}>
@@ -57,7 +64,7 @@ function GameScreen(props) {
                         <button className={`top left circle`}>{'<'}</button>
                     </Link>
                     <div id='message'>
-                        <h2>The number is</h2>
+                        {setSecondMessage()}
                         <h1>{message}</h1>
                     </div>
                     <form className={'column'} onSubmit={checkAnswer}>
