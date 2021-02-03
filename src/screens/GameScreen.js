@@ -56,7 +56,10 @@ function GameScreen(props) {
                     <Link to={`/`}>
                         <button className={`top circle`}>{'<'}</button>
                     </Link>
-                    <h1 className={'message'}>{message}</h1>
+                    <div id='message'>
+                        <h2>The number is</h2>
+                        <h1>{message}</h1>
+                    </div>
                     <form className={'column'} onSubmit={checkAnswer}>
                         <label className={'column'}>
                             <p>{inputNumber}</p>
@@ -67,7 +70,8 @@ function GameScreen(props) {
                                 <p>100</p>
                             </div>
                         </label>
-                        <button className={"center"} type={"submit"} value={"check"} disabled={!buttonAvailable}>Check</button>
+                        <button className={"center"} type={"submit"} value={"check"} disabled={!buttonAvailable}>Check
+                        </button>
                     </form>
                 </div>
             </div>

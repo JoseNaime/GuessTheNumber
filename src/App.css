@@ -5,8 +5,9 @@
 }
 
 :root {
-  --red  : #E05849;
-  --blue : #347FE0;
+  --red  : #d44f40;
+  --blue : #2f74cd;
+  --green: #83bc2a;
 }
 
 #root {
@@ -24,7 +25,7 @@ h1, p {
 }
 
 h1 {
-  font-size   : 8em;
+  font-size   : 7em;
   font-weight : 300;
 }
 
@@ -46,7 +47,7 @@ form label {
   justify-content : center;
   height          : 100vh;
   margin          : 0;
-  background      : linear-gradient(145deg, var(--red) 0%, var(--red) 50%, var(--blue) 50%, var(--blue) 100%);
+  background      : linear-gradient(150deg, var(--red) 0%, var(--red) 50%, var(--blue) 50%, var(--blue) 100%);
 }
 
 #title {
@@ -109,7 +110,7 @@ form label {
 }
 
 .right {
-  background-color : #a1cb4c;
+  background-color : var(--green);
 }
 
 .neutral {
@@ -117,19 +118,31 @@ form label {
   
 }
 
+#message {
+  white-space    : pre-wrap;
+}
+
+#message > *{
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Positions */
+
 .top {
   position : absolute;
   top      : 15px;
   left     : 0;
 }
 
-.center {
-  margin : 0 auto;
+.bottom{
+  position : absolute;
+  bottom      : 15px;
+  left     : 0;
 }
 
-.message {
-  white-space    : pre-wrap;
-  text-transform : capitalize;
+.center {
+  margin : 0 auto;
 }
 
 /* Buttons */
@@ -167,6 +180,12 @@ button:hover {
   top       : 60%;
   left      : 50%;
   transform : translate(-50%, -50%);
+  
+}
+.buttonsContainer button{
+  opacity: 0;
+  animation: up-fade-in 2s forwards;
+  animation-delay: 2s;
 }
 
 /* Animations */
