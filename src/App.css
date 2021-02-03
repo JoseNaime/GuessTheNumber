@@ -223,13 +223,13 @@ button:hover {
 /* Animations */
 
 @keyframes up-fade-in {
-  0% {
+  from {
     opacity   : 0;
     transform : translateY(50px);
   }
-  100% {
+  to {
     transform : translateY(0);
-    opacity   : 100;
+    opacity   : 10000%;
   }
 }
 
@@ -241,7 +241,7 @@ button:hover {
   }
   40% {
     transform : translateX(0);
-    opacity   : 100;
+    opacity   : 100%;
   }
   60% {
   
