@@ -34,9 +34,15 @@ p {
   margin    : 0 auto;
 }
 
+p.smallText{
+  font-size : 2em;
+}
+
 h1 {
   margin : 0;
 }
+
+
 form label {
   margin : 5em 0;
 }
@@ -129,9 +135,12 @@ form label {
 }
 
 #message h2{
-  text-align: left;
   font-size: 1.25em;
-  transform: translateY(30px);
+  transform: translateY(100%);
+}
+
+#message .attempts{
+  transform: translateY(-150%);
 }
 /* Positions */
 
@@ -158,6 +167,14 @@ form label {
 
 .center {
   margin : 0 auto;
+}
+
+.textLeft{
+  text-align: left;
+}
+
+.textRight{
+  text-align: right;
 }
 
 /* Buttons */

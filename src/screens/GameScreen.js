@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 function GameScreen(props) {
     const [number, setNumber] = useState(0)
-    const [attempts, setAttempts] = useState(1);
+    const [attempts, setAttempts] = useState(0);
     const [inputNumber, setInputNumber] = useState(0);
     const [prevInputNumber, setPrevInputNumber] = useState(-1);
     const [message, setMessage] = useState('Type a number');
@@ -29,7 +29,7 @@ function GameScreen(props) {
         let message;
         let bgState;
         if (inputNumber === number) { // Game Won
-            message = `CONGRATS!!\n${attempts} attempts`
+            message = `CONGRATS!!`
             setButtonAvailable(true)
             bgState = 'completed'
         } else if (inputNumber > number) { // Number is Lower
@@ -50,7 +50,7 @@ function GameScreen(props) {
 
     const setSecondMessage = () => {
         if (background === 'higher' || background === 'lower') {
-            return <h2>The number is</h2>
+            return <h2 className="textLeft">The number is</h2>
         }
         return ''
     }
@@ -66,6 +66,7 @@ function GameScreen(props) {
                     <div id='message'>
                         {setSecondMessage()}
                         <h1>{message}</h1>
+                        {(attempts > 0)?<h2 className={"attempts textRight"}>Attempts: {attempts}</h2>:''}
                     </div>
                     <form className={'column'} onSubmit={checkAnswer}>
                         <label className={'column'}>
