@@ -54,7 +54,7 @@ function GameScreen(props) {
             <div className={`App ${background}`}>
                 <div className={`wrapper content`}>
                     <Link to={`/`}>
-                        <button className={`top circle`}>{'<'}</button>
+                        <button className={`top left circle`}>{'<'}</button>
                     </Link>
                     <div id='message'>
                         <h2>The number is</h2>

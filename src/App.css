@@ -132,13 +132,22 @@ form label {
 .top {
   position : absolute;
   top      : 15px;
-  left     : 0;
 }
 
 .bottom{
   position : absolute;
   bottom      : 15px;
   left     : 0;
+}
+
+.left {
+  position: absolute;
+  left: 15px;
+}
+
+.right {
+  position: absolute;
+  right: 15px;
 }
 
 .center {
@@ -185,7 +194,7 @@ button:hover {
 .buttonsContainer button{
   opacity: 0;
   animation: up-fade-in 2s forwards;
-  animation-delay: 2s;
+  animation-delay: 1.5s;
 }
 
 /* Animations */
