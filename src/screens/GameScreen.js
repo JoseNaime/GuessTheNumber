@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Slider} from "@material-ui/core";
 import {Link} from "react-router-dom";
+import {Helmet} from "react-helmet";
 
 function GameScreen(props) {
     const [number, setNumber] = useState(0)
@@ -56,8 +57,12 @@ function GameScreen(props) {
     }
 
     return (
-
         <div>
+            <Helmet>
+                <title>Guess The Number | Game</title>
+                <meta name="description" content="Game | Try to guess the hidden/random number" />
+            </Helmet>
+
             <div className={`App ${background}`}>
                 <div className={`wrapper content`}>
                     <Link to={`/`}>
