@@ -5,8 +5,7 @@ import {Switch, Route, withRouter} from "react-router-dom"
 import HomeScreen from "./screens/HomeScreen";
 import ReactGA from "react-ga";
 
-ReactGA.initialize([{trackingId:'G-ZK5PC3NQ91',
-debug: true}]);
+ReactGA.initialize('UA-188856045-2');
 
 const App = () => {
     useEffect(() => {
