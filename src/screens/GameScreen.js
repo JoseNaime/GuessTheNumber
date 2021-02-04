@@ -60,7 +60,7 @@ function GameScreen(props) {
         <div>
             <Helmet>
                 <title>Guess The Number | Game</title>
-                <meta name="description" content="Game | Try to guess the hidden/random number" />
+                <meta name="description" content="Game | Try to guess the hidden/random number"/>
             </Helmet>
 
             <div className={`App ${background}`}>
@@ -71,7 +71,7 @@ function GameScreen(props) {
                     <div id='message'>
                         {setSecondMessage()}
                         <h1>{message}</h1>
-                        {(attempts > 0)?<h2 className={"attempts textRight"}>Attempts: {attempts}</h2>:''}
+                        {(attempts > 0) ? <h2 className={"attempts textRight"}>Attempts: {attempts}</h2> : ''}
                     </div>
                     <form className={'column'} onSubmit={checkAnswer}>
                         <label className={'column'}>

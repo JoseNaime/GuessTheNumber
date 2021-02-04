@@ -7,7 +7,7 @@ function HomeScreen(props) {
         <div id={"homeScreen"}>
             <Helmet>
                 <title>Guess The Number | Home</title>
-                <meta name="description" content="Home | Try to guess the hidden/random number" />
+                <meta name="description" content="Home | Try to guess the hidden/random number"/>
             </Helmet>
 
             <header>
