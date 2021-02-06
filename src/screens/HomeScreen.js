@@ -8,6 +8,7 @@ function HomeScreen(props) {
             <Helmet>
                 <title>Guess The Number | Home</title>
                 <meta name="description" content="Home | Try to guess the hidden/random number"/>
+                <meta name="keywords" content="guess the number, home, github, react app, fork"/>
             </Helmet>
 
             <header>

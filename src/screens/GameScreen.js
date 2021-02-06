@@ -61,6 +61,7 @@ function GameScreen(props) {
             <Helmet>
                 <title>Guess The Number | Game</title>
                 <meta name="description" content="Game | Try to guess the hidden/random number"/>
+                <meta name="keywords" content="guess the number, game, github, react app, fork"/>
             </Helmet>
 
             <div className={`App ${background}`}>
