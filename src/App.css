@@ -136,17 +136,16 @@ form label {
 }
 
 #message h1{
-  line-height: .75em;
-  margin-top: .5em;
+  line-height: .8em;
 }
 
 #message h2 {
   font-size : 1.25em;
-  transform : translateY(100%);
+
 }
 
 #message .attempts {
-  transform : translateY(-150%);
+  line-height: 0;
 }
 /* Positions */
 
