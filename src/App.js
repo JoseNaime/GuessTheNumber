@@ -4,9 +4,6 @@ import GameScreen from "./screens/GameScreen";
 import {Switch, Route, withRouter} from "react-router-dom"
 import HomeScreen from "./screens/HomeScreen";
 import ReactGA from "react-ga";
-import Privacy from "./components/privacy/privacy";
-
-ReactGA.initialize('UA-188856045-2');
 
 const App = () => {
     useEffect(() => {
@@ -15,7 +12,6 @@ const App = () => {
 
     return (
         <div>
-            <Privacy/>
         <Switch>
 
             <Route exact path="/game">

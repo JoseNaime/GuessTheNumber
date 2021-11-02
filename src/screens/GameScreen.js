@@ -8,7 +8,7 @@ function GameScreen(props) {
     const [attempts, setAttempts] = useState(0);
     const [inputNumber, setInputNumber] = useState(0);
     const [prevInputNumber, setPrevInputNumber] = useState(-1);
-    const [message, setMessage] = useState('Type a number');
+    const [message, setMessage] = useState('Select a number');
     const [background, setBackground] = useState('neutral');
     const [buttonAvailable, setButtonAvailable] = useState(true);
 
